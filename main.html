@@ -2,14 +2,18 @@
 
 <body>
 	<h3> Upload image to process </h3>
-	<form class="form" id="myForm">
-		<input type="file" id="inpFile">
+	<form id="myForm">
+		<input type="file" id="inpFile"> <br> <br>
 		<button type="sumbit"> Upload File </button>
 	</form>
 
 	<script>
-		
-
+		document.getElementById('myForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			const uploadFile = document.getElementById('file').files[0];
+			const formData = new FormData();
+			formData.append('user-file',uploadFile);
+		})
 	</script>
 
 </body>
